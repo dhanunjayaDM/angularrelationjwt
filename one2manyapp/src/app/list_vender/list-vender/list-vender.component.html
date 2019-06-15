@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+    <th>Vender id</th>
+    <th>Vender Name</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vender of venders">
+    <td>{{vender.vendorId}}</td>
+    <td>{{vender.vendorName}}</td>
+    <td><button type="button" (click)="updateVender(vender)">Update</button></td>
+    <td><button type="button" (click)="deleteVender(vender)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>

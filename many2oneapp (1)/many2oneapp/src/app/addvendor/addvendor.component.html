@@ -1,0 +1,16 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add User</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="vendorId">Vendor ID:</label>
+        <input type="email" formControlName="vendorId" placeholder="vendorId" name="vendorId" class="form-control" id="vendorId">
+      </div>
+  
+      <div class="form-group">
+        <label for="vendorName">Vendor Name:</label>
+        <input formControlName="vendorName" placeholder="First Name" name="vendorName" class="form-control" id="vendorName">
+      </div>
+  
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>

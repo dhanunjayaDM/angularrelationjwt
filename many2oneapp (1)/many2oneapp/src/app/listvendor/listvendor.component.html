@@ -1,0 +1,15 @@
+<button class="btn btn-danger" (click)="addVendor()"> Add Vendor</button>
+<table>
+  <thead>
+    <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vendor of vendors">
+      <td>{{vendor.vendorId}}</td>
+      <td>{{vendor.vendorName}}</td>
+    </tr>
+  </tbody>
+</table>

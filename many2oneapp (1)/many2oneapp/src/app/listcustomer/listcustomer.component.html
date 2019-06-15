@@ -1,0 +1,26 @@
+<button class="btn btn-danger" (click)="addCustomer()"> Add Customer</button>
+<table>
+  <thead>
+    <tr>
+    <th>customerId</th>
+    <th>customerName</th>
+    <th>vendorId</th>
+    <th>Delete</th>
+    <th>EDIT</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.customerId}}</td>
+      <td>{{customer.customerName}}</td>
+      <td>{{customer.parent.vendorId}}</td>
+      <td>
+        <!-- <button type="button" (click)="deleteCustomer(customer)">Delete</button> -->
+      </td>
+      <td>
+        <!-- <button type="button" (click)="editCustomer(customer)">EDIT</button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+

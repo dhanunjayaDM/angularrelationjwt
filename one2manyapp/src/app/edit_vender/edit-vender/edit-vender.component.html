@@ -1,0 +1,40 @@
+<form [formGroup]="venderForm" (ngSubmit)="OnSubmit()">
+    <div class="form-group">
+      <!-- <label for="vendorId">vendorId</label> -->
+      <input type="text" id="vendorId" hidden formControlName="vendorId" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="vendorName">vendorName</label>
+      <input type="text" id="vendorName" formControlName="vendorName" class="form-control">
+    </div>
+    
+    <div class="well">
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-4">
+          <button type="button" class="btn btn-primary" (click)="addCustomerButtonClick()">
+            Add Customers
+          </button>
+        </div>
+      </div>
+      <div formArrayName="children" *ngFor="let customer of venderForm.get('children').controls;let i = index">
+        <div [formGroupName]="i">
+          <div>
+          <div class="form-group" *ngIf="venderForm.get('children').length>1">
+            <button type="button" (click)="removeCustomerButtonClick(i)">Delete</button>
+             
+          </div>
+            <div class="form-group">
+                <label [attr.for]="'customerId'+i">customerId</label> 
+                <input type="text" [id]="'customerId'+i" hidden  formControlName="customerId" class="form-control">
+              </div>
+              <div class="form-group">
+                <label [attr.for]="'customerName'+i">customerName</label>
+                <input type="text" [id]="'customerName'+i" formControlName="customerName" class="form-control">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+    

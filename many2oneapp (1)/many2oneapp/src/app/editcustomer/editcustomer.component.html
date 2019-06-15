@@ -1,0 +1,27 @@
+<div class="col-md-6">
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="customerId">customerId ID:</label>
+            <input  formControlName="customerId" placeholder="customerId" name="customerId" class="form-control" id="customerId">
+          </div>
+      
+          <div class="form-group">
+            <label for="customerName">Customer Name:</label>
+            <input formControlName="customerName" placeholder="First Name" name="customerName" class="form-control" id="customerName">
+          </div>
+
+          <div class="form-group" formGroupName="parent" >
+        
+              <select id="vendorId" name="vendorId"  formControlName="vendorId">
+             <option *ngFor="let parent of parents" [value]="parent.vendorId">
+              {{parent.vendorName}}
+            </option>
+          </select>
+         
+  
+        </div>   
+  
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
